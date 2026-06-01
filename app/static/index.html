@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Weather City Ranking</title>
+
+    <link rel="stylesheet" href="/static/сss/styles.css">
+</head>
+<body>
+    <h1>Weather City Ranking</h1>
+
+    <div class="controls">
+        <input id="startDate" type="date">
+        <input id="endDate" type="date">
+        <button id="loadButton">Get Data</button>
+    </div>
+
+    <div class="status-container">
+        <span id="spinner" class="spinner"></span>
+        <p id="status"></p>
+    </div>
+
+    <div class="table-wrapper">
+        <table>
+            <thead>
+                <tr>
+                    <th>Rank</th>
+                    <th>City</th>
+                    <th>Country</th>
+                    <th>Score</th>
+                </tr>
+            </thead>
+            <tbody id="results"></tbody>
+        </table>
+    </div>
+
+    <script src="/static/js/app.js"></script>
+</body>
+</html>
