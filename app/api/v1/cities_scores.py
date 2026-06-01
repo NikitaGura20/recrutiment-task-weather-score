@@ -2,12 +2,16 @@ from datetime import date, timedelta
 
 from fastapi import APIRouter, Query
 
+from app.schemas.city_score import CityScoreResponse
 from app.services.city_ranking_service import get_ranked_city_scores
 
 router = APIRouter()
 
 
-@router.get("/cities-scores")
+@router.get(
+    "/cities-scores",
+    response_model=list[CityScoreResponse],
+)
 async def get_cities_scores(
     start_date: date | None = Query(default=None),
     end_date: date | None = Query(default=None),
