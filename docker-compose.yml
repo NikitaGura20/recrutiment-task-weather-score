@@ -1,0 +1,6 @@
+services:
+  weather-score-api:
+    build: .
+    container_name: weather-score-api
+    ports:
+      - "8000:8000"
