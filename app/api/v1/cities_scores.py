@@ -1,6 +1,6 @@
 from datetime import date, timedelta
 
-from fastapi import APIRouter, Query
+from fastapi import APIRouter, HTTPException, Query, status
 
 from app.schemas.city_score import CityScoreResponse
 from app.services.city_ranking_service import get_ranked_city_scores
@@ -20,6 +20,12 @@ async def get_cities_scores(
 
     start = start_date or yesterday
     end = end_date or yesterday
+
+    if start > end:
+        raise HTTPException(
+            status_code=status.HTTP_400_BAD_REQUEST,
+            detail="Start date cannot be later than end date.",
+        )
 
     return await get_ranked_city_scores(
         start_date=start,

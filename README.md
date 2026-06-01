@@ -38,30 +38,42 @@ The application compares the following cities:
 ## Project Structure
 
 ```text
-app/
-├── api/
-│   └── v1/
-│       └── cities_scores.py
-├── cache/
-│   ├── decorators.py
-│   └── memory_cache.py
-├── constants/
-│   ├── open_meteo_data.py
-│   ├── scoring.py
-│   └── weather.py
-├── core/
-│   └── config.py
-├── schemas/
-│   └── city_score.py
-├── services/
-│   ├── city_ranking_service.py
-│   ├── scoring_service.py
-│   └── weather_service.py
-├── static/
-│   ├── css/
-│   ├── js/
-│   └── index.html
-└── main.py
+weather-score-app/
+├── app/
+│   ├── api/
+│   │   └── v1/
+│   │       └── cities_scores.py
+│   ├── cache/
+│   │   ├── decorators.py
+│   │   └── memory_cache.py
+│   ├── constants/
+│   │   ├── open_meteo_data.py
+│   │   ├── scoring.py
+│   │   └── weather.py
+│   ├── core/
+│   │   └── config.py
+│   ├── schemas/
+│   │   └── city_score.py
+│   ├── services/
+│   │   ├── city_ranking_service.py
+│   │   ├── scoring_service.py
+│   │   └── weather_service.py
+│   ├── static/
+│   │   ├── css/
+│   │   │   └── styles.css
+│   │   ├── js/
+│   │   │   └── app.js
+│   │   └── index.html
+│   └── main.py
+├── tests/
+│   ├── test_cities_scores_endpoint.py
+│   └── test_scoring_service.py
+├── Dockerfile
+├── docker-compose.yml
+├── .dockerignore
+├── .gitignore
+├── requirements.txt
+└── README.md
 ```
 
 ## How to Run Locally
